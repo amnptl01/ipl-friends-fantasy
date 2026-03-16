@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>IPL Fantasy Friends</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#f4f4f4;
+}
+
+h1{
+color:#ff4d00;
+}
+
+.players{
+margin-top:30px;
+}
+
+button{
+padding:10px 20px;
+background:orange;
+border:none;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<h1>IPL Fantasy Friends</h1>
+
+<h2>Select Your Team</h2>
+
+<div class="players">
+
+<label><input type="checkbox" value="Virat Kohli"> Virat Kohli</label><br>
+<label><input type="checkbox" value="Rohit Sharma"> Rohit Sharma</label><br>
+<label><input type="checkbox" value="MS Dhoni"> MS Dhoni</label><br>
+<label><input type="checkbox" value="Hardik Pandya"> Hardik Pandya</label><br>
+<label><input type="checkbox" value="Jasprit Bumrah"> Jasprit Bumrah</label><br>
+<label><input type="checkbox" value="KL Rahul"> KL Rahul</label>
+
+</div>
+
+<br>
+
+<button onclick="showTeam()">Submit Team</button>
+
+<h2>Your Team</h2>
+
+<ul id="team"></ul>
+
+<script>
+
+function showTeam(){
+
+let selected=document.querySelectorAll("input:checked");
+
+let team=document.getElementById("team");
+
+team.innerHTML="";
+
+selected.forEach(player=>{
+
+let li=document.createElement("li");
+
+li.textContent=player.value;
+
+team.appendChild(li);
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
